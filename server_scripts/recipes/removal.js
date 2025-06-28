@@ -15,12 +15,7 @@ ServerEvents.recipes(event =>{
     event.remove({output: `minecraft:${tool}_sword`})
     event.remove({output: `minecraft:${tool}_hoe`})
 
-})
-    toolsparts.forEach((part) =>{
-    event.remove({output: `silentgear:${part}_template`})
-    
-})
-}
+})}
 )
 
 console.info('Hello, World! (Loaded server scripts)')
