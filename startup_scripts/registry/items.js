@@ -44,9 +44,9 @@ const toolsparts =[
 
 StartupEvents.registry('item', event => {
     event.create('blueprinttier2')
-    .displayName('Blueprint Tier (III)'),
+    .displayName('Blueprint Tier (II)'),
     event.create('blueprinttier3')
-    .displayName('Blueprint Tier (IV)')
+    .displayName('Blueprint Tier (II)')
     
     //partes em blue print:
     toolsparts.forEach((part) =>{
