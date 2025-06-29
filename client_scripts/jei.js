@@ -46,6 +46,7 @@ JEIEvents.hideItems(event => {
    event.hide(`silentgear:${part}_template`)
   })
 }),
+
 //item rename
 ClientEvents.lang('en_us', event => {
     event.renameItem('silentgear:blueprint_paper', "Blueprint Tier (I)")
