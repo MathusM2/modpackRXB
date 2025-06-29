@@ -8,22 +8,28 @@ const toolsToRemove = [
 
 
 ServerEvents.recipes(event =>{
-    toolsToRemove.forEach((tool) =>{
-    event.remove({output: `minecraft:${tool}_axe`})
-    event.remove({output: `minecraft:${tool}_pickaxe`})
-    event.remove({output: `minecraft:${tool}_shovel`})
-    event.remove({output: `minecraft:${tool}_sword`})
-    event.remove({output: `minecraft:${tool}_hoe`})
-
-})
-    toolsparts.forEach((part) =>{
-    event.remove({output: `silentgear:${part}_template`})
+        let silentGearRecipes = [];
     
-})
-}
-)
+        event.forEachRecipe({type: 'silentgear:compound_part'}, recipe => {
+            silentGearRecipes.push(recipe.getId().toString())
+        })
 
-console.info('Hello, World! (Loaded server scripts)')
+        silentGearRecipes.forEach((recipeId) =>{
+            event.remove({id: `${recipeId}`})
+        })
+
+        /*
+        toolsToRemove.forEach((tool) =>{
+            event.remove({output: `minecraft:${tool}_axe`})
+            event.remove({output: `minecraft:${tool}_pickaxe`})
+            event.remove({output: `minecraft:${tool}_shovel`})
+            event.remove({output: `minecraft:${tool}_sword`})
+            event.remove({output: `minecraft:${tool}_hoe`})
+
+        })
+        */
+    }
+)
 
 ServerEvents.customCommand('diamonds', event => {
   event.player.give(Item.of('minecraft:diamond', 64))

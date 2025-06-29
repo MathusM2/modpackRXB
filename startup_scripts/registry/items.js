@@ -51,9 +51,9 @@ StartupEvents.registry('item', event => {
     //partes em blue print:
     toolsparts.forEach((part) =>{
     event.create(`${part}_blueprinttier2`)
-    .displayName(`Tool ${part} Blueprint (II)`).texture('layer0','kubejs:item/blueprinttier2').texture('layer1',`kubejs:item/blueprint_${part}`)
+    .displayName(`Tool ${part.charAt(0).toUpperCase() + part.slice(1)} Blueprint (II)`).texture('layer0','kubejs:item/blueprinttier2').texture('layer1',`kubejs:item/blueprint_${part}`)
     event.create(`${part}_blueprinttier3`)
-    .displayName(`Tool ${part} Blueprint (II)`).texture('layer0','kubejs:item/blueprinttier3').texture('layer1',`kubejs:item/blueprint_${part}`)
+    .displayName(`Tool ${part.charAt(0).toUpperCase() + part.slice(1)} Blueprint (II)`).texture('layer0','kubejs:item/blueprinttier3').texture('layer1',`kubejs:item/blueprint_${part}`)
 
 })
 })
